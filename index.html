@@ -11,7 +11,7 @@
 
 			body {
 				font-family: "IBM Plex Sans";
-				padding: 1rem;
+				padding: 4rem;
 
 				display: flex;
 				flex-direction: column;
@@ -131,7 +131,7 @@
 			})
 
 			const achievementData = [
-				"Attended DE-SIGN Workshop 2023 by United World Institute of Design",
+				"Attended DE-SIGN Workshop 2023 by United World Institute of Design at Patna, Bihar",
 				"Won #1 at Techkriti 2024 - RE Dev (IIT Kanpur), won against IIT Kanpur and Delhi"
 			]
 			const achievements = document.querySelector("#achievements")
@@ -333,7 +333,7 @@
 				<h1 class="font-bold text-4xl md:text-7xl -mt-4">Ishat Gupta</h1>
 				<h2 class="font-semibold text-zinc-500 md:text-3xl">Engineer and Artist</h2>
 			</section>
-			<hr class="my-4 border-zinc-300 w-full">
+			<hr class="my-8 border-zinc-300 w-full">
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-[30%_70%] w-[calc(100%-1rem)]">
 				<section id="contacts">
 					<div class="flex gap-4 p-2 bg-black w-full items-center justify-center mb-4">
@@ -379,14 +379,14 @@
 				My Photography, Graphic Design, and other works!
 			</h1>
 			<hr class="border-zinc-300 w-full">
-			<section id="content"></section>
+			<section id="content" class="text-lg"></section>
 		</section>
 		<section class="flex flex-col gap-4" id="page_3">
 			<h1 class="text-4xl font-bold">
 				My Life as a Developer
 			</h1>
 			<hr class="border-zinc-300 w-full">
-			<section id="content"></section>
+			<section id="content" class="text-lg"></section>
 			<h1 class="text-2xl font-bold my-4">My Setup, what do I work with?</h1>
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="devices"></div>
 			<h1 class="text-2xl font-bold my-4">... and what languages or frameworks do I use?</h1>
@@ -407,7 +407,7 @@
 				document.querySelector(`#page_${num}`).classList.toggle("hidden")
 			}
 
-			togglePage(2)
+			// togglePage(3)
 		</script>
 	</body>
 </html>
