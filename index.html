@@ -9,6 +9,12 @@
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+			@media print {
+				* {
+					print-color-adjust: exact;
+				}
+			}
+			
 			body {
 				font-family: "IBM Plex Sans";
 				padding: 4rem;
@@ -16,6 +22,10 @@
 				display: flex;
 				flex-direction: column;
 				gap: 0.5rem;
+			}
+
+			@page {
+				size: 1240px 1754px;
 			}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
@@ -334,7 +344,7 @@
 				<h2 class="font-semibold text-zinc-500 md:text-3xl">Engineer and Artist</h2>
 			</section>
 			<hr class="my-8 border-zinc-300 w-full">
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-[30%_70%] w-[calc(100%-1rem)]">
+			<div class="grid gap-4 grid-cols-[30%_70%] w-[calc(100%-1rem)]">
 				<section id="contacts">
 					<div class="flex gap-4 p-2 bg-black w-full items-center justify-center mb-4">
 						<img src="/icons/forum.svg" class="h-10 w-10 invert">
@@ -407,7 +417,7 @@
 				document.querySelector(`#page_${num}`).classList.toggle("hidden")
 			}
 
-			// togglePage(3)
+			togglePage(1)
 		</script>
 	</body>
 </html>
