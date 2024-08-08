@@ -8,7 +8,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-						
+
 			body {
 				font-family: "IBM Plex Sans";
 				padding: 4rem;
@@ -28,7 +28,8 @@
 					print-color-adjust: exact;
 				}
 
-				#page_2, #page_3 {
+				#page_2,
+				#page_3 {
 					margin-top: 2rem;
 				}
 			}
@@ -41,18 +42,21 @@
 				font-weight: 500;
 			}
 
-			#page_1, #page_2 {
+			#page_1,
+			#page_2 {
 				page-break-after: always;
 			}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-		<script>//eruda.init();</script>		
+		<script>
+			//eruda.init();
+		</script>
 	</head>
 	<body>
 		<script defer type="module">
 			import { parse } from "https://esm.sh/marked"
 
-			const aboutContent = await fetch("/about.md").then(x => x.text())
+			const aboutContent = await fetch("/about.md").then((x) => x.text())
 			const about = document.querySelector("#about")
 			about.innerHTML += `
 				<div class="py-4 text-lg">
@@ -63,27 +67,27 @@
 			const contactsData = [
 				{
 					platform: "email",
-					data: "ishatgupta56@gmail.com"
+					data: "ishatgupta56@gmail.com",
 				},
 				{
 					platform: "phone",
-					data: "+91 98721 31743"
+					data: "+91 98721 31743",
 				},
 				{
 					platform: "logo--instagram",
-					data: "lepichudoesdev"
+					data: "lepichudoesdev",
 				},
 				{
 					platform: "logo--github",
-					data: "LePichu"
+					data: "LePichu",
 				},
 				{
 					platform: "logo--discord",
-					data: "lepichudoesdev"
-				}
+					data: "lepichudoesdev",
+				},
 			]
 			const contacts = document.querySelector("#contacts")
-			contactsData.forEach(contact => {
+			contactsData.forEach((contact) => {
 				contacts.innerHTML += `
 					<div class="flex w-full gap-2 items-center mb-3">
 						<img src="/icons/${contact.platform}.svg" class="h-8 w-8">
@@ -95,15 +99,15 @@
 			const eduData = [
 				{
 					time: ["2012", "2022"],
-					school: "Ryan International School, Chandigarh"
+					school: "Ryan International School, Chandigarh",
 				},
 				{
 					time: ["2022", "2024"],
-					school: "St. Joseph's High School, Patna"
-				}
+					school: "St. Joseph's High School, Patna",
+				},
 			]
 			const edu = document.querySelector("#edu")
-			eduData.forEach(data => {
+			eduData.forEach((data) => {
 				edu.innerHTML += `
 					<div class="flex w-full items-center justify-between mt-4">
 						<div class="flex flex-col w-[25%] py-1 items-center bg-white invert font-medium">
@@ -121,23 +125,26 @@
 					time: [2020, 2020],
 					place: "Blockfactory 🇫🇷",
 					position: "Intern",
-					description: "My first job, I worked as an intern building content for the Minecraft Marketplace. I worked on the Lucky Block Skyblock Map, alongside a few scrapped projects."
+					description:
+						"My first job, I worked as an intern building content for the Minecraft Marketplace. I worked on the Lucky Block Skyblock Map, alongside a few scrapped projects.",
 				},
 				{
 					time: [2022, 2022],
 					place: "Octovon 🇺🇲",
 					position: "Developer",
-					description: "My second job, again, worked on content for the Minecraft Marketplace, this time on a project called Jetpacks and I wrote a few internal tools for automated code generation and an invoice generator."
+					description:
+						"My second job, again, worked on content for the Minecraft Marketplace, this time on a project called Jetpacks and I wrote a few internal tools for automated code generation and an invoice generator.",
 				},
 				{
 					time: [2023, 2024],
 					place: "Quickstay Rooms 🇮🇳",
 					position: "Web Developer",
-					description: "My third job, at the startup ran by my sister, I rebuilt the website from ground up, I had to architect with performance in mind while trying to scale myself up to match the performance of 3 interns working simultaneously."
-				}
+					description:
+						"My third job, at the startup ran by my sister, I rebuilt the website from ground up, I had to architect with performance in mind while trying to scale myself up to match the performance of 3 interns working simultaneously.",
+				},
 			]
 			const work = document.querySelector("#work")
-			workData.forEach(data => {
+			workData.forEach((data) => {
 				work.innerHTML += `
 					<div class="flex w-full justify-between mt-4">
 						<div class="flex flex-col w-[15%] h-fit py-1 items-center bg-white invert font-medium">
@@ -159,10 +166,10 @@
 
 			const achievementData = [
 				"Attended DE-SIGN Workshop 2023 by United World Institute of Design at Patna, Bihar",
-				"Won #1 at Techkriti 2024 - RE Dev (IIT Kanpur), won against IIT Kanpur and Delhi"
+				"Won #1 at Techkriti 2024 - RE Dev (IIT Kanpur), won against IIT Kanpur and Delhi",
 			]
 			const achievements = document.querySelector("#achievements")
-			achievementData.forEach(data => {
+			achievementData.forEach((data) => {
 				achievements.innerHTML += `
 					<div class="flex gap-4 mt-4">
 						<img src="/icons/checkmark.svg" class="bg-white invert px-2">
@@ -170,32 +177,32 @@
 					</div>
 				`
 			})
-			
+
 			const citationData = [
 				{
 					name: "Keith Noel",
 					post: "Software Engineer",
 					company: "Artefactual",
 					pfp: "keith",
-					cite: "I am impressed by what you can do and accomplish that remains difficult for so many. In most discussion you have a wealth of knowledge that is backed by project building real things. A very rare and valuable thing."
-				}, 
+					cite: "I am impressed by what you can do and accomplish that remains difficult for so many. In most discussion you have a wealth of knowledge that is backed by project building real things. A very rare and valuable thing.",
+				},
 				{
 					name: "Abhiram",
 					post: "Lead Engineer",
 					company: "CK Labs",
 					pfp: "abhiram",
-					cite: "Ishat is an exceptional developer, blending talent and creativity to exceed project expectations. Their deep understanding of tech and innovative approach to problem solving make them a standout in the industry."
+					cite: "Ishat is an exceptional developer, blending talent and creativity to exceed project expectations. Their deep understanding of tech and innovative approach to problem solving make them a standout in the industry.",
 				},
 				{
 					name: "Ishita Gupta",
 					post: "Co-founder",
 					company: "Quickstay Rooms",
 					pfp: "potato",
-					cite: "Very Talented and Impressive for his age, can keep up with workloads of multiple people as an individual, making him a highly valuable developer and designer in this industry."
-				}
+					cite: "Very Talented and Impressive for his age, can keep up with workloads of multiple people as an individual, making him a highly valuable developer and designer in this industry.",
+				},
 			]
 			const citations = document.querySelector("#citations > section")
-			citationData.forEach(data => {
+			citationData.forEach((data) => {
 				citations.innerHTML += `
 					<div class="flex flex-col gap-4 p-4 mt-2 border border-solid border-zinc-300">
 						<div class="flex flex-col gap-4 items-center">
@@ -207,13 +214,13 @@
 						<p class="">${data.cite}</p>
 					</div>
 				`
-			})			
-			
-			const page2Content = await fetch("/artist.md").then(x => x.text())
+			})
+
+			const page2Content = await fetch("/artist.md").then((x) => x.text())
 			const page2 = document.querySelector("#page_2 > #content")
 			page2.innerHTML = parse(page2Content)
-			
-			const page3Content = await fetch("/engineer.md").then(x => x.text())
+
+			const page3Content = await fetch("/engineer.md").then((x) => x.text())
 			const page3 = document.querySelector("#page_3 > #content")
 			page3.innerHTML = parse(page3Content)
 
@@ -221,16 +228,18 @@
 				{
 					name: "HP Pavillion G5",
 					icon: "laptop",
-					description: "Windows 10 / Fedora Linux (Dual Boot), i5-7200u Processor, 8GB DDR4 RAM, 1TB HDD Storage, Intel Integrated HD620 Graphics"
+					description:
+						"Windows 10 / Fedora Linux (Dual Boot), i5-7200u Processor, 8GB DDR4 RAM, 1TB HDD Storage, Intel Integrated HD620 Graphics",
 				},
 				{
 					name: "realme Narzo 50a",
 					icon: "application--mobile",
-					description: "Android 12 / Void Linux (PRoot/VM), MediaTek Helio G85 Processor, 4GB RAM, 64GB Flash Storage, ARM Mali-652 GPU"
-				}
+					description:
+						"Android 12 / Void Linux (PRoot/VM), MediaTek Helio G85 Processor, 4GB RAM, 64GB Flash Storage, ARM Mali-652 GPU",
+				},
 			]
 			const devicesElement = document.querySelector("#devices")
-			devices.forEach(device => {
+			devices.forEach((device) => {
 				devicesElement.innerHTML += `
 					<div class="flex flex-row items-center gap-4 w-full border border-solid border-zinc-300 p-4">
 						<img src="/icons/${device.icon}.svg" class="h-16 w-16">
@@ -260,11 +269,11 @@
 				"Kotlin",
 				"Crystal",
 				"Elixir",
-				"Gleam"
+				"Gleam",
 			]
 
 			const languageGrid = document.querySelector("#languages")
-			languages.forEach(lang => {
+			languages.forEach((lang) => {
 				languageGrid.innerHTML += `
 					<div class="flex flex-col gap-4 items-center justify-center">
 						<img src="/technologies/${lang}.png" class="h-12 w-12">
@@ -279,11 +288,11 @@
 				"IntelliJ IDEA",
 				"NeoVim",
 				"Helix",
-				"Git"
+				"Git",
 			]
 
 			const toolsGrid = document.querySelector("#tools")
-			tools.forEach(tool => {
+			tools.forEach((tool) => {
 				toolsGrid.innerHTML += `
 					<div class="flex flex-col gap-4 items-center justify-center">
 						<img src="/technologies/${tool.replaceAll(" ", "_")}.png" class="h-12 w-12">
@@ -295,23 +304,26 @@
 			const activeProjects = [
 				{
 					name: "Chai.build",
-					description: "An All-in-One Tool for the Java Ecosystem, includes a Package Manager, Build System, Formatter, Linter, and more.",
-					image: "chai"
+					description:
+						"An All-in-One Tool for the Java Ecosystem, includes a Package Manager, Build System, Formatter, Linter, and more.",
+					image: "chai",
 				},
 				{
 					name: "Zircon",
-					description: "A Programming Language inspired by Crystal and Rust, built to be like the BEAM VM but with native code generation and tooling in mind.",
-					image: "zircon"
-				}, 
+					description:
+						"A Programming Language inspired by Crystal and Rust, built to be like the BEAM VM but with native code generation and tooling in mind.",
+					image: "zircon",
+				},
 				{
 					name: "OctoSYS",
-					description: "An Experimental Operating System Project with the goal of having an operating system run on any host environment or bare metal seamlessly.",
-					image: "octosys"
-				}
+					description:
+						"An Experimental Operating System Project with the goal of having an operating system run on any host environment or bare metal seamlessly.",
+					image: "octosys",
+				},
 			]
 
 			const activeProjElement = document.querySelector("#active-projects")
-			activeProjects.forEach(proj => {
+			activeProjects.forEach((proj) => {
 				activeProjElement.innerHTML += `
 					<div class="flex flex-row items-center gap-4 w-full border border-solid border-zinc-300 p-4">
 						<img src="/projects/${proj.image}.png" class="h-16 w-16">
@@ -326,23 +338,26 @@
 			const pastProjects = [
 				{
 					name: "Aurora",
-					description: "A PowerShell Prompt Module which aims to mimic the starship.rs cross-shell prompt with performance in mind.",
-					image: "aurora"
+					description:
+						"A PowerShell Prompt Module which aims to mimic the starship.rs cross-shell prompt with performance in mind.",
+					image: "aurora",
 				},
 				{
 					name: "RaptorFX",
-					description: "A Now Discontinued Project which merged the Deno JavaScript/TypeScript runtime in a WebView to build GUIs with.",
-					image: "raptorfx"
+					description:
+						"A Now Discontinued Project which merged the Deno JavaScript/TypeScript runtime in a WebView to build GUIs with.",
+					image: "raptorfx",
 				},
 				{
 					name: "Salta",
-					description: "A Sass or SCSS Compiler Library/Tool for the Deno JavaScript/TypeScript runtime which leveraged parallelism with dart-sass.",
-					image: "salta"
-				}
+					description:
+						"A Sass or SCSS Compiler Library/Tool for the Deno JavaScript/TypeScript runtime which leveraged parallelism with dart-sass.",
+					image: "salta",
+				},
 			]
 
 			const pastProjElement = document.querySelector("#past-projects")
-			pastProjects.forEach(proj => {
+			pastProjects.forEach((proj) => {
 				pastProjElement.innerHTML += `
 					<div class="flex flex-row items-center gap-4 w-full border border-solid border-zinc-300 p-4">
 						<img src="/projects/${proj.image}.png" class="h-16 w-16">
@@ -360,44 +375,56 @@
 				<h1 class="font-bold text-7xl -mt-4">Ishat Gupta</h1>
 				<h2 class="font-semibold text-3xl opacity-50">Engineer and Artist</h2>
 			</section>
-			<hr class="my-8 border-zinc-300 w-full">
+			<hr class="my-8 border-zinc-300 w-full" />
 			<div class="grid gap-4 grid-cols-[30%_70%] w-[calc(100%-1rem)]">
 				<section id="contacts">
-					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center mb-4">
-						<img src="/icons/forum.svg" class="h-10 w-10">
+					<div
+						class="flex gap-4 p-2 bg-white invert w-full items-center justify-center mb-4"
+					>
+						<img src="/icons/forum.svg" class="h-10 w-10" />
 						<h1 class="text-2xl">Contact Info.</h1>
 					</div>
 				</section>
 				<section id="about">
-					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
-						<img src="/icons/identification.svg" class="h-10 w-10">
+					<div
+						class="flex gap-4 p-2 bg-white invert w-full items-center justify-center"
+					>
+						<img src="/icons/identification.svg" class="h-10 w-10" />
 						<h1 class="text-2xl">About Me</h1>
 					</div>
 				</section>
 				<section id="edu">
-					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
-						<img src="/icons/education.svg" class="h-10 w-10">
+					<div
+						class="flex gap-4 p-2 bg-white invert w-full items-center justify-center"
+					>
+						<img src="/icons/education.svg" class="h-10 w-10" />
 						<h1 class="text-2xl">Education Profile</h1>
 					</div>
 				</section>
 				<section id="work">
-					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
-						<img src="/icons/industry.svg" class="h-10 w-10">
+					<div
+						class="flex gap-4 p-2 bg-white invert w-full items-center justify-center"
+					>
+						<img src="/icons/industry.svg" class="h-10 w-10" />
 						<h1 class="text-2xl">Work History</h1>
 					</div>
 				</section>
 				<section id="achievements">
-					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
-							<img src="/icons/trophy.svg" class="h-10 w-10">
-							<h1 class="text-2xl">Achievements</h1>
-						</div>
+					<div
+						class="flex gap-4 p-2 bg-white invert w-full items-center justify-center"
+					>
+						<img src="/icons/trophy.svg" class="h-10 w-10" />
+						<h1 class="text-2xl">Achievements</h1>
+					</div>
 				</section>
 				<section id="citations">
-						<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
-							<img src="/icons/review.svg" class="h-10 w-10">
-							<h1 class="text-2xl">Citations</h1>
-						</div>
-						<section class="py-2 grid grid-cols-3 gap-4"></section>
+					<div
+						class="flex gap-4 p-2 bg-white invert w-full items-center justify-center"
+					>
+						<img src="/icons/review.svg" class="h-10 w-10" />
+						<h1 class="text-2xl">Citations</h1>
+					</div>
+					<section class="py-2 grid grid-cols-3 gap-4"></section>
 				</section>
 			</div>
 		</section>
@@ -405,30 +432,32 @@
 			<h1 class="text-4xl font-bold">
 				My Photography, Graphic Design, and other works!
 			</h1>
-			<hr class="border-zinc-300 w-full">
+			<hr class="border-zinc-300 w-full" />
 			<section id="content" class="text-lg"></section>
 		</section>
 		<section class="flex flex-col gap-4" id="page_3">
-			<h1 class="text-4xl font-bold">
-				My Life as a Developer
-			</h1>
-			<hr class="border-zinc-300 w-full">
+			<h1 class="text-4xl font-bold">My Life as a Developer</h1>
+			<hr class="border-zinc-300 w-full" />
 			<section id="content" class="text-lg"></section>
 			<h1 class="text-2xl font-bold my-4">My Setup, what do I work with?</h1>
 			<div class="grid grid-cols-2 gap-4" id="devices"></div>
-			<h1 class="text-2xl font-bold my-4">... and what languages or frameworks do I use?</h1>
+			<h1 class="text-2xl font-bold my-4">
+				... and what languages or frameworks do I use?
+			</h1>
 			<div class="grid grid-cols-6 gap-4" id="languages"></div>
 			<h1 class="text-2xl font-bold my-4">... and what tools do I use?</h1>
 			<div class="grid grid-cols-6 gap-4" id="tools"></div>
 			<h1 class="text-2xl font-bold my-4">... but, what do I work on?</h1>
 			<div class="grid grid-cols-3 gap-4" id="active-projects"></div>
-			<h1 class="text-2xl font-bold my-4">... and what have I worked on in the past?</h1>
+			<h1 class="text-2xl font-bold my-4">
+				... and what have I worked on in the past?
+			</h1>
 			<div class="grid grid-cols-3 gap-4" id="past-projects"></div>
 		</section>
 		<script>
 			function togglePage(num) {
 				const pages = ["page_1", "page_2", "page_3"]
-				pages.forEach(page => {
+				pages.forEach((page) => {
 					document.querySelector(`#${page}`).classList.toggle("hidden")
 				})
 				document.querySelector(`#page_${num}`).classList.toggle("hidden")
