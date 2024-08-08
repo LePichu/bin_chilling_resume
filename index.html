@@ -8,13 +8,7 @@
 		<script src="https://cdn.tailwindcss.com"></script>
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-
-			@media print {
-				* {
-					print-color-adjust: exact;
-				}
-			}
-			
+						
 			body {
 				font-family: "IBM Plex Sans";
 				padding: 4rem;
@@ -25,7 +19,30 @@
 			}
 
 			@page {
-				size: 1240px 1754px;
+				size: 1414px 2000px;
+				print-color-adjust: exact;
+			}
+
+			@media print {
+				* {
+					print-color-adjust: exact;
+				}
+
+				#page_2, #page_3 {
+					margin-top: 2rem;
+				}
+			}
+
+			* {
+				print-color-adjust: exact;
+			}
+
+			h1.text-2xl {
+				font-weight: 500;
+			}
+
+			#page_1, #page_2 {
+				page-break-after: always;
 			}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
@@ -89,7 +106,7 @@
 			eduData.forEach(data => {
 				edu.innerHTML += `
 					<div class="flex w-full items-center justify-between mt-4">
-						<div class="flex flex-col w-[25%] py-1 items-center text-white bg-black">
+						<div class="flex flex-col w-[25%] py-1 items-center bg-white invert font-medium">
 							<p>${data.time[0]}</p>
 							<p>-</p>
 							<p>${data.time[1]}</p>
@@ -123,7 +140,7 @@
 			workData.forEach(data => {
 				work.innerHTML += `
 					<div class="flex w-full justify-between mt-4">
-						<div class="flex flex-col w-[15%] h-fit py-1 items-center text-white bg-black">
+						<div class="flex flex-col w-[15%] h-fit py-1 items-center bg-white invert font-medium">
 							<p>${data.time[0]}</p>
 							<p>-</p>
 							<p>${data.time[1]}</p>
@@ -132,7 +149,7 @@
 							<h1 class="font-semibold">
 								${data.place}, 
 								<span class="font-normal">positioned as</span>
-								<span class="text-zinc-500">${data.position}</span>
+								<span class="opacity-50">${data.position}</span>
 							</h1>
 							<p>${data.description}</p>
 						</div>
@@ -147,7 +164,7 @@
 			const achievements = document.querySelector("#achievements")
 			achievementData.forEach(data => {
 				achievements.innerHTML += `
-					<div class="flex gap-4 py-2">
+					<div class="flex gap-4 mt-4">
 						<img src="/icons/checkmark.svg" class="bg-white invert px-2">
 						<p>${data}</p>
 					</div>
@@ -180,7 +197,7 @@
 			const citations = document.querySelector("#citations > section")
 			citationData.forEach(data => {
 				citations.innerHTML += `
-					<div class="flex flex-col gap-4 p-4 border border-solid border-zinc-300">
+					<div class="flex flex-col gap-4 p-4 mt-2 border border-solid border-zinc-300">
 						<div class="flex flex-col gap-4 items-center">
 							<img src="/people/${data.pfp}.png" class="w-full rounded-[9999px]">
 							<h1 class="text-xl font-bold">${data.name}</h1>
@@ -339,48 +356,48 @@
 		</script>
 		<section id="page_1">
 			<section class="flex flex-col items-end gap-2">
-				<h2 class="md:text-3xl">Hello, I am</h2>
-				<h1 class="font-bold text-4xl md:text-7xl -mt-4">Ishat Gupta</h1>
-				<h2 class="font-semibold text-zinc-500 md:text-3xl">Engineer and Artist</h2>
+				<h2 class="text-3xl">Hello, I am</h2>
+				<h1 class="font-bold text-7xl -mt-4">Ishat Gupta</h1>
+				<h2 class="font-semibold text-3xl opacity-50">Engineer and Artist</h2>
 			</section>
 			<hr class="my-8 border-zinc-300 w-full">
 			<div class="grid gap-4 grid-cols-[30%_70%] w-[calc(100%-1rem)]">
 				<section id="contacts">
-					<div class="flex gap-4 p-2 bg-black w-full items-center justify-center mb-4">
-						<img src="/icons/forum.svg" class="h-10 w-10 invert">
-						<h1 class="text-white text-2xl">Contact Info.</h1>
+					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center mb-4">
+						<img src="/icons/forum.svg" class="h-10 w-10">
+						<h1 class="text-2xl">Contact Info.</h1>
 					</div>
 				</section>
 				<section id="about">
-					<div class="flex gap-4 p-2 bg-black w-full items-center justify-center">
-						<img src="/icons/identification.svg" class="h-10 w-10 invert">
-						<h1 class="text-white text-2xl">About Me</h1>
+					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
+						<img src="/icons/identification.svg" class="h-10 w-10">
+						<h1 class="text-2xl">About Me</h1>
 					</div>
 				</section>
 				<section id="edu">
-					<div class="flex gap-4 p-2 bg-black w-full items-center justify-center">
-						<img src="/icons/education.svg" class="h-10 w-10 invert">
-						<h1 class="text-white text-2xl">Education Profile</h1>
+					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
+						<img src="/icons/education.svg" class="h-10 w-10">
+						<h1 class="text-2xl">Education Profile</h1>
 					</div>
 				</section>
 				<section id="work">
-					<div class="flex gap-4 p-2 bg-black w-full items-center justify-center">
-						<img src="/icons/industry.svg" class="h-10 w-10 invert">
-						<h1 class="text-white text-2xl">Work History</h1>
+					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
+						<img src="/icons/industry.svg" class="h-10 w-10">
+						<h1 class="text-2xl">Work History</h1>
 					</div>
 				</section>
 				<section id="achievements">
-						<div class="flex gap-4 p-2 bg-black w-full items-center justify-center">
-							<img src="/icons/trophy.svg" class="h-10 w-10 invert">
-							<h1 class="text-white text-2xl">Achievements</h1>
+					<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
+							<img src="/icons/trophy.svg" class="h-10 w-10">
+							<h1 class="text-2xl">Achievements</h1>
 						</div>
 				</section>
 				<section id="citations">
-						<div class="flex gap-4 p-2 bg-black w-full items-center justify-center">
-							<img src="/icons/review.svg" class="h-10 w-10 invert">
-							<h1 class="text-white text-2xl">Citations</h1>
+						<div class="flex gap-4 p-2 bg-white invert w-full items-center justify-center">
+							<img src="/icons/review.svg" class="h-10 w-10">
+							<h1 class="text-2xl">Citations</h1>
 						</div>
-						<section class="py-2 grid grid-cols-1 md:grid-cols-3 gap-4"></section>
+						<section class="py-2 grid grid-cols-3 gap-4"></section>
 				</section>
 			</div>
 		</section>
@@ -398,15 +415,15 @@
 			<hr class="border-zinc-300 w-full">
 			<section id="content" class="text-lg"></section>
 			<h1 class="text-2xl font-bold my-4">My Setup, what do I work with?</h1>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="devices"></div>
+			<div class="grid grid-cols-2 gap-4" id="devices"></div>
 			<h1 class="text-2xl font-bold my-4">... and what languages or frameworks do I use?</h1>
-			<div class="grid grid-cols-2 md:grid-cols-6 gap-4" id="languages"></div>
+			<div class="grid grid-cols-6 gap-4" id="languages"></div>
 			<h1 class="text-2xl font-bold my-4">... and what tools do I use?</h1>
-			<div class="grid grid-cols-2 md:grid-cols-6 gap-4" id="tools"></div>
+			<div class="grid grid-cols-6 gap-4" id="tools"></div>
 			<h1 class="text-2xl font-bold my-4">... but, what do I work on?</h1>
-			<div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="active-projects"></div>
+			<div class="grid grid-cols-3 gap-4" id="active-projects"></div>
 			<h1 class="text-2xl font-bold my-4">... and what have I worked on in the past?</h1>
-			<div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="past-projects"></div>
+			<div class="grid grid-cols-3 gap-4" id="past-projects"></div>
 		</section>
 		<script>
 			function togglePage(num) {
@@ -417,7 +434,7 @@
 				document.querySelector(`#page_${num}`).classList.toggle("hidden")
 			}
 
-			togglePage(1)
+			// togglePage(1)
 		</script>
 	</body>
 </html>

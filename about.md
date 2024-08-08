@@ -2,8 +2,9 @@ Hey there, I'm *Ishat Gupta*, just a **17-year-old** who's been dancing with com
 
 <style>
   #about a {
-    background-color: black;
-    color: white;
+    background-color: white;
+    filter: invert();
+    font-weight: 500;
     padding: 0.1rem 0.2rem;    
   }
 </style>
